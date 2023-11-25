@@ -1,6 +1,13 @@
 // TODO: write your code here
-import sum from './basic';
 
-console.log('worked');
+export default class Validator {
+  constructor(userName) {
+    this.userName = userName;
+  }
 
-console.log(sum([1, 2]));
+  validateUsername() {
+    const regex = /^[a-z](?:(?!\d{3,})[\w-])*[a-z]$/i;
+
+    return regex.test(this.userName);
+  }
+}
